@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { AboutPage } from '../pages/AboutPage.ts';
-import { getBaseUrl } from '../utils.config/config.ts';
+import { getBaseUrl } from '../utils/config.ts';
 
-test('check for console errors on the About page', async ({ page }) => {
+test('Check for console errors on the About page', async ({ page }) => {
   const aboutPage = new AboutPage(page);
   await aboutPage.navigateTo({ url: getBaseUrl() + 'about.html' });
 

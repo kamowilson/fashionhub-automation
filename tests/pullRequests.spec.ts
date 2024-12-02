@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { GitHubPRPage } from '../pages/GitHubPRPage';
 import { TEST_DATA } from '../pages/TestData';
-import { writeToCsv } from '../utils.config/csvHelper';
+import { writeToCsv } from '../utils/csvHelper';
 
-test('should export pull requests to CSV', async ({ page }) => {
+test('Export pull requests to CSV file', async ({ page }) => {
     const githubPage = new GitHubPRPage(page);
     await githubPage.navigate(TEST_DATA.URLS.GITHUB_PRS);
     
@@ -11,6 +11,6 @@ test('should export pull requests to CSV', async ({ page }) => {
     const csvFileName = "pull-requests-" + Date.now() + ".csv";
     await writeToCsv(pullRequests, csvFileName);
     
-    // Add assertion to verify the pull requests were retrieved
+    // Add assertion to verify the pull requests were retrieved successfully
     expect(pullRequests.length).toBeGreaterThan(0);
 });
