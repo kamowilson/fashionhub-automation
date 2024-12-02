@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { GitHubPRPage } from '../pages/GitHubPRPage';
 import { TEST_DATA } from '../pages/TestData';
-import { writeToCsv } from '../utils.config/csvHelper';
+import { writeToCsv } from '../utils/csvHelper';
 
 test('should export pull requests to CSV', async ({ page }) => {
     const githubPage = new GitHubPRPage(page);
