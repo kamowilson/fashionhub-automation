@@ -13,7 +13,7 @@ test('Check for console errors on the About page', async ({ page }) => {
 });
 
 
-test('Suppress console error in browser', async ({ page }) => {
+test('suppress console error in browser', async ({ page }) => {
   // Override console.error in the browser context
   await page.addInitScript(() => {
     console.error = () => {};  // This suppresses all console errors
